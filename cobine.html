@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Project_name</title>
+     <!-- <link rel="stylesheet" href="style.css"> -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet"   href="https://fonts.googleapis.com/css?family=Kaushan+Script|Poppins&display=swap">  
+     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+     <!-- <script src="index.js" defer></script> -->
+     <style>
+          *{
+     margin: 0;
+     padding: 0;
+     font-family: 'Poppins',sans-serif;
+}
+#banner{
+     background: linear-gradient(rgba(0,0,0,0.5),#009688) ,url(/img/Barber_Shop_img/Barber_Shop_img/banner.jpg);
+     background-size: cover;
+     background-position: center;
+     height: 100vh;
+}
+.logo{
+     width:140px;
+     position: absolute;
+     top: 4%;
+     left:4%;
+}
+.banner-text{
+     text-align: center;
+     color: white;
+     padding-top: 180px;
+
+}
+.banner-text h1{
+     font-size: 130px;
+     font-family: 'Kaushan_script',cursive;
+}
+.banner-text p{
+     font-size: 20px;
+}
+.banner-btn{
+     margin: 70px auto 0;
+}
+
+.banner-btn a{
+     width: 150px;
+     text-decoration: none;
+     display: inline-block;
+     margin: 0 10px;
+     padding: 12px 0;
+     color: white;
+     border: .5px solid white;
+     position: relative;
+     z-index: 1;
+     transition: color .5s;
+}
+.banner-btn a span{
+     width: 0;
+     height: 100%;
+     position: absolute;
+     top: 0;
+     left: 0;
+     background: white;
+     z-index: -1;
+     transition: .5s;
+     
+}
+.banner-btn a:hover span{
+     
+     width: 100%;
+}
+
+.banner-btn a:hover{
+     /* width: 100%; */
+     color: black;
+}
+#sideNav{
+     width: 200px;
+     height: 100vh;
+     position: fixed;
+     right: -250px;
+     /* to hide the menu */
+     top: 0;
+     background: #009688;
+     z-index: 2;
+     transition: .5s;
+     
+}
+nav ul li{
+     list-style: none;
+     margin: 50px 20px;
+}
+nav ul li a{
+
+text-decoration: none;
+color: white;
+}
+
+#menuBtn{
+     width: 50px;
+     height: 50px;
+     background: #009688;
+     text-align: center;
+     position: fixed;
+     right: 30px;
+     top: 20px;
+     border-radius: 3px;
+     z-index: 3;
+     cursor: pointer;
+}
+#menuBtn img{
+
+     width: 20px;
+     margin-top: 15px;
+}
+/* writing media queries */
+
+@media screen and (max-width:770px) {
+     .banner-text h1{
+          font-size: 44px;
+          font-family: 'Kaushan_script',cursive;
+     }
+      .banner-btn a{
+          display:inline-block;
+          margin: 5px 5px;
+      }
+}
+/* features */
+#feature{
+     width: 100%;
+     padding: 70px 0;
+}
+.tittle-text{
+     text-align: center;
+     padding-bottom: 70px;
+}
+.tittle-text p{
+     margin: auto;
+     font-size: 20px;
+     color: #009688;
+     font-weight: bold;
+     position: relative;
+     z-index: 1;
+     display: inline-block;
+}
+.tittle-text p::after{
+     content: '';
+     width: 50px;
+     height:35px;
+     background: linear-gradient(#019587,#fff);
+     position: absolute;
+     top: -20px;
+     left:0px;
+     z-index: -1;
+     transform: rotate(10deg);
+     border-top-left-radius: 35px;
+     border-bottom-right-radius: 35px;
+
+     
+}
+.tittle-text h1{
+     font-size: 50px;
+     
+}
+.feature-box{
+     width:80%;
+     margin: auto;
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     text-align: center;
+}
+.features{
+     flex-basis: 50%;
+}
+.features-img{
+     flex-basis: 50%;
+     margin: auto;
+}
+.features-img img{
+     width: 70%;
+     border-radius: 10px;
+}
+
+.features h1{
+     text-align: left;
+     margin-bottom:10px;
+     font-weight: 100;
+     color:#009688;
+}
+.features-desc{
+     display: flex;
+     align-items: center;
+     margin-bottom: 40px;
+}
+.feature-icon .fa{
+     width: 50px;
+     height: 50px;
+     font-size: 30px;
+     line-height: 50px;
+     border-radius: 8px;
+     color: #009688;
+     border: 1px solid #009688;
+}
+.feature-text p{
+     padding:0 20px;
+     text-align: initial;
+}
+@media screen and (max-width:770px){
+     .tittle-text h1{
+          font-size: 35px;
+     }
+     .features{
+          flex-basis: 100%;
+     }
+     
+     .features-img{
+          flex-basis: 100%;
+     }
+     .features-img img{
+          flex-basis: 100%;
+          width: 100%;
+     }
+}
+
+/* Section 3 Service */
+
+#service{
+     width: 100%;
+     padding: 70px 0;
+     background: #efefef;
+}
+
+.service-box{
+     width: 80%;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+     margin: auto;
+}
+.single-service{
+     flex-basis: 48%;
+     text-align: center;
+     border-radius: 7px;
+     margin-bottom: 20px;
+     color: #fff;
+     position: relative;
+}
+
+.single-service img{
+     width: 100%;
+     border-radius: 7px;
+}
+.overlay{
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     top:0;
+     border-radius: 7px;
+     cursor: pointer;
+     background: linear-gradient(rgba(0,0,0,0.5),#009688);
+     opacity: 0;
+     transition:1s ;
+}
+.single-service:hover .overlay{
+     opacity: 1;
+}
+.service-desc{
+     width: 80%;
+     position:absolute;
+     bottom: 0;
+     /* making bottom 0 for hover effect */
+     left: 50%;
+     transform: translateX(-50%);
+     visibility: hidden;
+}
+hr{
+     background: white;
+     height: 2px;
+     border: 0;
+     margin: 15px auto;
+     width: 60%;
+}
+.service-desc p{
+     font-size: 14px;
+}
+
+.single-service:hover .service-desc{
+
+bottom: 40%;
+transition: 1s;
+visibility: visible;
+}
+
+@media screen and (max-width:770px){
+     
+     .single-service{
+          flex-basis: 100%;
+          margin-bottom: 30px;
+     }
+     .service-desc p{
+          font-size: 12px;
+     }
+     hr{
+          margin: 5px auto;
+     }
+     .single-service:hover .service-desc{
+
+          bottom: 20% !important;
+          
+          }
+}
+
+/* footer */
+#footer{
+     /* width: 100%; */
+     padding:100px 0 20px;
+     background:white;
+     position: relative;
+}
+.footer-row{
+     width: 80%;
+     margin:0 auto;
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+}
+.footer-left,.footer-right{
+     flex-basis: 45%;
+     padding: 10px;
+     margin-bottom: 20px;
+}
+.footer-right{
+     text-align: right;
+}
+.footer-row h1{
+     margin: 10px 0;
+}
+.footer-row p{
+line-height: 35px;
+
+}
+.footer-left .fa , .footer-right .fa{
+     font-size: 20px;
+     color: #009688;
+     margin: 10px;
+}
+.footer-img{
+     max-width: 370px;
+     opacity: .1;
+     position: absolute;
+     left: 50%;
+     top: 30%;
+     transform: translate(-50%,-50%);
+}
+.social-media{
+     text-align: center;
+}
+.social-media .fa-brands{
+     height: 40px;
+     width: 40px;
+     font-size: 20px;
+     line-height: 40px;
+     border: 1px solid #009688;
+     border-radius: 5px;
+     margin: 40px 5px 0;
+     color: #009688;
+     cursor: pointer;
+}
+.social-media .fa-brands:hover{
+     background: #009688;
+     color: #fff;
+     transform: translateY(-7px);
+     transition: .5s;
+}
+@media screen and (max-width:770px){
+     .footer-left,.footer-right{
+          flex-basis: 100%;
+          font-size: 14px;
+     }
+     .footer-img{
+          top:25%;
+     }
+}
+     </style>
+</head>
+<body>
+     <section id="banner">
+          <img src="img/Barber_Shop_img/Barber_Shop_img/logo.png" alt="logo" class="logo">
+          <div class="banner-text">
+               <h1>Project_name</h1>
+               <p>Slogan goes here...</p>
+               <div class="banner-btn">
+               <a href="#"><span></span> Button 1</a>
+               <a href="#"><span></span> Button 2</a>
+          </div>
+          </div>
+     </section>
+     <div id="sideNav">
+          <nav>
+               <ul>
+                    <li><a href="#banner">Home</a></li>
+                    <li><a href="#">Label 2</a></li>
+                    <li><a href="#">Label 3</a></li>
+                    <li><a href="#">Register Now</a></li> 
+                    <li><a href="#footer">About Us</a></li>
+               </ul>
+          </nav>
+     </div>
+     <div id="menuBtn">
+          <img id="menu" src="img/Barber_Shop_img/Barber_Shop_img/menu.png">
+     </div>
+<!-- features -->
+<section id="feature">
+     <div class="tittle-text">
+          <p>Features</p>
+          <h1>Why Choose us</h1>
+     </div>
+     <div class="feature-box">
+
+          <div class="features">
+               <h1>Lorem 1</h1>
+               <div class="features-desc">
+                    <div class="feature-icon">
+                         <i class="fa fa-shield"></i>
+                    </div>
+                    <div class="feature-text">
+                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ipsam molestiae provident. Ducimus ipsa modi labore ex totam consequatur harum neque quia dolore iste, nam sint facilis unde optio fuga!</p>
+                    </div>
+               </div>
+               <h1>Lorem 2</h1>
+               <div class="features-desc">
+                    <div class="feature-icon">
+                         <i class="fa fa-check-square"></i>
+                         
+                    </div>
+                    <div class="feature-text">
+                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ipsam molestiae provident. Ducimus ipsa modi labore ex totam consequatur harum neque quia dolore iste, nam sint facilis unde optio fuga!</p>
+                    </div>
+               </div>
+               <h1>Lorem 3</h1>
+               <div class="features-desc">
+                    <div class="feature-icon">
+                         <i class="fa fa-inr"></i>
+                    </div>
+                    <div class="feature-text">
+                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ipsam molestiae provident. Ducimus ipsa modi labore ex totam consequatur harum neque quia dolore iste, nam sint facilis unde optio fuga!</p>
+                    </div>
+               </div>
+          </div>
+          <div class="features-img">
+               <img src="img/Barber_Shop_img/Barber_Shop_img/barber-man.jpg" alt="" srcset="">
+          </div>
+
+     </div>
+</section>
+
+<!-- Section 3 -->
+
+<section id="service">
+          <div class="tittle-text">
+               <p>Lorem</p>
+               <h1>We are Better </h1>
+          </div>
+               <div class="service-box">
+                    <div class="single-service">
+                         <img src="img/Barber_Shop_img/Barber_Shop_img/img-1.jpg" alt="">
+                         <div class="overlay"></div>
+                         <div class="service-desc">
+                              <h3>Tittle..</h3>
+                              <hr>
+                              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, earum, obcaecati, possimus consequuntur sint in iste optio amet dolore est porro quo?</p>
+                         </div>
+                    </div>
+                    <div class="single-service">
+                         <img src="img/Barber_Shop_img/Barber_Shop_img/img-2.jpg" alt="">
+                         <div class="overlay"></div>
+                         <div class="service-desc">
+                              <h3>Tittle..</h3>
+                              <hr>
+                              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, earum, obcaecati, possimus consequuntur sint in iste optio amet dolore est porro quo?</p>
+                         </div>
+                    </div>
+                    <div class="single-service">
+                         <img src="img/Barber_Shop_img/Barber_Shop_img/img-3.jpg" alt="">
+                         <div class="overlay"></div>
+                         <div class="service-desc">
+                              <h3>Tittle..</h3>
+                              <hr>
+                              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, earum, obcaecati, possimus consequuntur sint in iste optio amet dolore est porro quo?</p>
+                         </div>
+                    </div>
+                    
+                    <div class="single-service">
+                         <img src="img/Barber_Shop_img/Barber_Shop_img/img-1.jpg" alt="">
+                         <div class="overlay"></div>
+                         <div class="service-desc">
+                              <h3>Tittle..</h3>
+                              <hr>
+                              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore, earum, obcaecati, possimus consequuntur sint in iste optio amet dolore est porro quo?</p>
+                         </div>
+                    </div>
+
+               </div>
+
+</section>
+
+<!-- skiped the testimonial section have registration form instead of that -->
+
+<!-- footer -->
+
+<section id="footer">
+     <img src="img/Barber_Shop_img/Barber_Shop_img/footer-img.png" class="footer-img">
+     <div class="tittle-text">
+          <p>Contact Us</p>
+          <h1>Lorem, ipsum.</h1>
+     </div>
+     <div class="footer-row">
+          <div class="footer-left">
+                    <h1>Tittle1...</h1>
+                    <p><i class="fa fa-paper-plane"></i> Lorem ipsum dolor sit amet.</p>
+                    <p><i class="fa fa-paper-plane"></i>Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div class="footer-right">
+               <h1>Tittle2...</h1>
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam suscipit molestiae in? <i class="fa fa-paper-plane"></i></p>
+               <p>Lorem ipsum dolor sit.<i class="fa fa-paper-plane"></i></p>
+               <p>Lorem ipsum dolor sit amet consectetur.<i class="fa fa-paper-plane"></i></p>
+          </div>
+          
+     </div>
+          <div class="social-media">
+               <i class="fa-brands fa-facebook"></i>
+               <i class="fa-brands fa-twitter"></i>
+               <i class="fa-brands fa-instagram"></i>
+               <i class="fa-brands fa-youtube"></i>
+     </div>
+</section>
+<script>
+     //make sure to use defer when using js as external file
+
+let menuBtn=document.querySelector("#menuBtn");
+let sidenav=document.querySelector("#sidenav");
+let menu=document.querySelector("#menu");//mneu id is for menu-img
+
+sideNav.style.right="-250px";
+
+menuBtn.onclick=function () {
+     if (sideNav.style.right=="-250px") {
+          sideNav.style.right="0px"
+          menu.src="img/Barber_Shop_img/Barber_Shop_img/close.png";//to change the icon
+     }
+     else{
+          sideNav.style.right="-250px"
+          menu.src="img/Barber_Shop_img/Barber_Shop_img/menu.png";
+     }
+}
+var scroll = new SmoothScroll('a[href*="#"]', {
+	speed: 1000,
+	speedAsDuration: true
+});
+</script>
+
+</body>
+</html>
