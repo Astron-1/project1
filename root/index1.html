@@ -1,6 +1,6 @@
-<?php
-include("config.php");
-?> 
+<!-- <?php
+include ("config.php");
+?>  -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,15 +17,9 @@ include("config.php");
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
           integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
-          <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
      <script src="index.js" defer></script>
-     <style>
-          #reg-form{
-     background:#efefef;
-}
-     </style>
+     <script src="validate.js" defer></script>
 </head>
 
 <body>
@@ -126,7 +120,9 @@ include("config.php");
                          </div>
                     </div>
                </div>
-          
+               <!-- <div class="features-img">
+                    <img src="robot-1.png" alt="" srcset="" />
+               </div> -->
           </div>
      </section>
 
@@ -297,9 +293,8 @@ include("config.php");
                     <div class="form-tittle">
                          Registration
                     </div>
-                    <!--  -->
-                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-
+                    <!-- <?php //echo $_SERVER['PHP_SELF']; ?> -->
+                    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                          <div class="user-details">
                               <div class="input-box">
                                    <span class="details">Name</span>
@@ -319,6 +314,12 @@ include("config.php");
                                    <input type="tel" name="mobileNumber" id="mobileNumber" placeholder="Mobile Number" required />
                               </div>
                          </div>
+                         <!-- <div class="user-details">
+                              <div class="input-box">
+                                   <span class="details">Date Of Birth</span>
+                                   <input type="date" name="DOB" id="" placeholder="DOB" required />
+                              </div>
+                         </div> -->
 
                          <div class="user-details">
                               <div class="input-select">
@@ -362,7 +363,7 @@ include("config.php");
                               </div>
                          </div>
                          <div class="button">
-                              <button id="btn" name="register" type="submit" onclick="return val()">
+                              <button id="btn" name="register" type="submit">
                                    <span></span> Register Now
                               </button>
                          </div>
@@ -404,6 +405,17 @@ include("config.php");
                          </a>
                     </p>
                </div>
+               <!-- <div class="footer-right">
+                    <h1>Tittle2...</h1>
+                    <p>
+                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam
+                         suscipit molestiae in? <i class="fa fa-paper-plane"></i>
+                    </p>
+                    <p>Lorem ipsum dolor sit.<i class="fa fa-paper-plane"></i></p>
+                    <p>
+                         Lorem ipsum dolor sit amet consectetur.<i class="fa fa-paper-plane"></i>
+                    </p>
+               </div> -->
           </div>
           <div class="social-media">
                <i class="fa-brands fa-facebook"></i>
@@ -412,14 +424,73 @@ include("config.php");
                <i class="fa-brands fa-youtube"></i>
           </div>
      </section>
-     <script src="validate.js" ></script>
-
-     
-
 </body>
 </html>
 
 
+<!-- 
+
 <?php
-     include("index2.php");
+     $error=$_POST['error'];
+     
+     if(isset($_POST['register']) && (!$error)){
+
+          $fullName = mysqli_real_escape_string($conn,$_POST['fullName']);
+          $eMail = mysqli_real_escape_string($conn,$_POST['eMail']);
+          $mobileNumber = mysqli_real_escape_string($conn,$_POST['mobileNumber']);
+          // $DOB = $_POST['DOB'];
+          $occupation = mysqli_real_escape_string($conn,$_POST['occupation']);
+          $workingPlace = mysqli_real_escape_string($conn,$_POST['workingPlace']);
+          $genderSelect = mysqli_real_escape_string($conn,$_POST['genderSelect']);
+          $address = mysqli_real_escape_string($conn,$_POST['address']);
+         
+try {
+     
+     $query= "INSERT INTO users (`Name`, `Email`, `Gender`, `Mob_no`, `Occupation`, `College_name`, `Address`, `submit_at`) VALUES ('$fullName','$eMail','$genderSelect','$mobileNumber','$occupation','$workingPlace','$address',current_timestamp());";
+     
+     $data=mysqli_query($conn,$query);
+     
+       if($data){
+            ?>
+           <script>
+                swal({
+                     title: "Good job!",
+                     text: "Your data has been submitted !",
+                     icon: "success",
+                     button: "OK",
+                     }); 
+           </script>
+<?php 
+            
+       }else{
+           ?>
+           <script> 
+                swal({
+                     title: "Oh no!",
+                     text: "Some Error Occured!",
+                     icon: "Error",
+                     button: "OK",
+                     }); 
+           </script>
+<?php 
+           
+       }
+} catch (\Throwable $th) {
+
+    ?>
+    <script> 
+         swal({
+              title: "Oh no!",
+              text: "<?php echo $th->getMessage(); ?>",
+              icon: "error",
+              button: "OK",
+              }); 
+    </script>
+<?php 
+     
+}
+ }
+       
 ?>
+
+ -->
